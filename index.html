@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Cipher – Secure Morse Messenger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #050505 100%);
+      color: #00ffe7;
+      overflow-x: hidden;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      background: linear-gradient(90deg, #00ffe7, #00bfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #e0e0e0;
+      max-width: 600px;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: #00ffe7;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #00bfff;
+    }
+    .morse-graphic {
+      margin-top: 3rem;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Blue Cipher</h1>
+    <p>Encrypted Bluetooth Messaging meets Morse Code. For rebels with a cause. Stay unseen. Speak secure. ⚡</p>
+    <a href="#" class="btn">Download Now</a>
+    <div class="morse-graphic">
+      <p>-- --- .-. ... . / -.-. --- -.. . / ... . -.-. ..- .-. .. - -.--</p>
+    </div>
+  </div>
+
+  <!-- Optional future: add Three.js or Spline 3D here -->
+  <!-- For now, placeholder for future 3D UI extension -->
+</body>
+</html>
