@@ -1,75 +1,103 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Cipher – Encrypted Web3 Messenger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(circle at center, #0ff1ff11, #0d0d0d);
+        background-size: cover;
+        z-index: -1;
+        animation: pulseBG 5s infinite ease-in-out;
+      }
 
-export default function MainLanding({ onLaunch }) {
-  return (
-    <main className="min-h-screen bg-black text-white px-6 py-12">
-      <motion.h1
-        className="text-5xl md:text-7xl font-bold text-center bg-gradient-to-r from-cyan-400 to-violet-600 text-transparent bg-clip-text"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Welcome to Blue Cipher
-      </motion.h1>
+      .glow {
+        text-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 40px #9400ff;
+      }
 
-      <motion.p
-        className="mt-6 text-center text-lg max-w-3xl mx-auto text-gray-400"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        A secure Web3-powered messaging tool that uses Morse code, Bluetooth, encryption, and NFT verification. Designed for rebels, developers, and privacy lovers.
-      </motion.p>
+      @keyframes pulseBG {
+        0%, 100% {
+          background: radial-gradient(circle at center, #0ff1ff11, #0d0d0d);
+        }
+        50% {
+          background: radial-gradient(circle at center, #0ff1ff33, #111111);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white px-6 py-12 font-sans">
+    <main class="min-h-screen flex flex-col items-center">
+      <iframe
+        src="https://my.spline.design/morseflashsignal"
+        frameborder="0"
+        width="100%"
+        height="400"
+        class="rounded-xl shadow-xl mb-10 border border-cyan-500"
+        allowfullscreen
+      ></iframe>
 
-      <motion.div
-        className="flex justify-center mt-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        <Button className="px-6 py-3 text-lg" onClick={onLaunch}>
-          🚀 Launch App
-        </Button>
-      </motion.div>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-center bg-gradient-to-r from-cyan-400 to-violet-600 text-transparent bg-clip-text glow tracking-wide">
+        Blue Cipher
+      </h1>
 
-      <div className="grid md:grid-cols-3 gap-6 mt-20 text-center">
-        <div className="p-6 bg-[#111] rounded-xl border border-cyan-500 shadow-md">
-          <h3 className="text-xl font-semibold text-cyan-400 mb-2">Encrypted Comms</h3>
-          <p className="text-sm text-gray-300">
-            Send Morse signals via Bluetooth and decrypt on-chain.
-          </p>
-        </div>
+      <p class="mt-6 text-center text-lg max-w-3xl mx-auto text-gray-300 leading-relaxed">
+        A revolutionary encrypted messenger built for the decentralized age. Using Morse code signals transmitted via Bluetooth, token-gated access, and 3D visual feedback, Blue Cipher stands at the edge of cyber freedom.
+      </p>
 
-        <div className="p-6 bg-[#111] rounded-xl border border-violet-500 shadow-md">
-          <h3 className="text-xl font-semibold text-violet-400 mb-2">Web3 Token Gating</h3>
-          <p className="text-sm text-gray-300">
-            Access secured logs only if you hold a valid NFT or token.
-          </p>
-        </div>
-
-        <div className="p-6 bg-[#111] rounded-xl border border-blue-500 shadow-md">
-          <h3 className="text-xl font-semibold text-blue-400 mb-2">3D Visuals</h3>
-          <p className="text-sm text-gray-300">
-            Morse signal rhythm is visualized using Spline 3D light animations.
-          </p>
-        </div>
+      <div class="flex justify-center mt-10">
+        <button
+          onclick="window.location.href='app.html'"
+          class="px-8 py-3 text-lg font-semibold bg-gradient-to-r from-cyan-400 to-violet-500 text-black rounded-xl hover:from-violet-500 hover:to-cyan-400 shadow-lg hover:shadow-cyan-500/50 transition duration-300"
+        >
+          🚀 Launch dApp
+        </button>
       </div>
 
-      <div className="mt-20 text-center">
-        <h2 className="text-2xl font-semibold text-gray-200 mb-4">Tech Stack</h2>
-        <p className="text-sm text-gray-400">
-          React + Tailwind + Ethers.js + Lit Protocol + IPFS + Spline + Framer Motion
+      <section class="grid md:grid-cols-3 gap-8 mt-24 text-center">
+        <div class="p-6 bg-[#101010] rounded-3xl border border-cyan-500 shadow-2xl hover:scale-105 transform transition">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-3">Encrypted Comms</h3>
+          <p class="text-sm text-gray-300">
+            Transmit Morse-encoded messages via Bluetooth with Lit-encrypted payloads and on-chain verification.
+          </p>
+        </div>
+
+        <div class="p-6 bg-[#101010] rounded-3xl border border-violet-500 shadow-2xl hover:scale-105 transform transition">
+          <h3 class="text-2xl font-bold text-violet-400 mb-3">Token Gating</h3>
+          <p class="text-sm text-gray-300">
+            Access logs, encrypted signals and archives with Blue Cipher NFT verification through your wallet.
+          </p>
+        </div>
+
+        <div class="p-6 bg-[#101010] rounded-3xl border border-blue-500 shadow-2xl hover:scale-105 transform transition">
+          <h3 class="text-2xl font-bold text-blue-400 mb-3">3D Signal Visuals</h3>
+          <p class="text-sm text-gray-300">
+            Real-time signal patterns rendered through Spline – from dot-dash to glowing cyber flares.
+          </p>
+        </div>
+      </section>
+
+      <section class="mt-24 text-center">
+        <h2 class="text-3xl font-semibold text-gray-100 mb-4">Tech Stack</h2>
+        <p class="text-base text-gray-400">
+          React • Tailwind CSS • Ethers.js • IPFS • Lit Protocol • Spline 3D • Framer Motion
         </p>
-      </div>
+      </section>
 
-      <div className="mt-16 text-center text-gray-400 text-sm">
-        Made with 💙 by Blue Cipher Devs –{' '}
-        <a href="mailto:your@email.com" className="underline text-cyan-400">
-          Contact Us
-        </a>
-      </div>
+      <footer class="mt-24 text-center text-gray-400 text-sm border-t border-gray-700 pt-6 w-full">
+        <p>Made with 💙 by Blue Cipher Devs – 
+          <a href="mailto:founder@bluecipher.xyz" class="underline text-cyan-400">Contact Us</a>
+        </p>
+        <p class="mt-2">© 2025 Blue Cipher. Built for resistance, encrypted for liberty.</p>
+      </footer>
     </main>
-  );
-}
+  </body>
+</html>
+
